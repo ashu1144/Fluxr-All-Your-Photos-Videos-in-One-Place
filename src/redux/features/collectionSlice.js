@@ -5,7 +5,10 @@ const collectionSlice = createSlice({
     initialState:[],
     reducers:{
         addItem(state , action){
-            state.push(action.payload);
+            let checkExists =state.some((el=>el.id === action.payload.id))
+            if(!checkExists){
+                state.push(action.payload);
+            }
         },
         deleteItem(state,action){
             return state.filter((item)=> item.id != action.payload.id);
