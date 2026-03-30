@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <defs>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff3366"/>
+      <stop offset="50%" stop-color="#bf00ff"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff3366"/>
+      <stop offset="50%" stop-color="#bf00ff"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Crop from the right side: adjust the width value below to change how much is cropped -->
+    <clipPath id="cropRight">
+      <!-- current viewBox width is 280; using 240 crops 40px from the right -->
+      <rect x="0" y="0" width="240" height="80" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#cropRight)">
+    <!-- Icon background rounded square -->
+    <rect x="8" y="8" width="56" height="56" rx="14" ry="14" fill="url(#iconGrad)" filter="url(#glow)"/>
+
+    <!-- Zap / lightning bolt icon centered in square -->
+    <polygon
+      points="36,18 22,42 34,42 28,62 50,36 38,36 44,18"
+      fill="white"
+      opacity="0.95"
+    />
+
+    <!-- FLUXR text -->
+    <text
+      x="80"
+      y="52"
+      font-family="Inter, Arial Black, sans-serif"
+      font-size="38"
+      font-weight="900"
+      letter-spacing="-2"
+      fill="url(#textGrad)"
+      filter="url(#glow)"
+    >FLUXR</text>
+  </g>
+</svg>
