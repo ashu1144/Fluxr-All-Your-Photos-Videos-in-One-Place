@@ -46,7 +46,6 @@ const ResultGrid = () => {
       }
       if (activeTab == "videos" && query.trim().length > 0) {
         let response = await fetchVideos(query);
-        console.log(response);
         data = response.map((item) => ({
           id: item.id,
           type: "video",
